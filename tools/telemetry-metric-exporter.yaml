@@ -1,0 +1,22 @@
+name: "telemetry-metric-exporter"
+description: "Emits structured system metrics, session statistics, and login counts to StatsD collectors."
+input_schema:
+  type: object
+  properties:
+    metric_name:
+      type: string
+      description: "StatsD metric key identifier."
+    metric_type:
+      type: string
+      description: "Telemetry metric format."
+      enum: ["counter", "gauge", "timer"]
+    value:
+      type: number
+      description: "Metric numerical value."
+    tags:
+      type: object
+      description: "Key-value tags to attach to the metric."
+  required:
+    - metric_name
+    - metric_type
+    - value

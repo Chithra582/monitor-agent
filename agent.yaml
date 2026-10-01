@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: "monitor-agent"
+version: "1.1.0"
+description: "Autonomous Linux infrastructure, eBPF telemetry, and SSH session monitoring agent."
+author: "SSHLog Community & OpenGAP Contributors"
+license: "AGPL-3.0"
+metadata:
+  domain: "Developer Tools / Infrastructure Monitoring & eBPF Telemetry"
+  category: "Developer Tools"
+  framework: "eBPF Kernel Probes & C++/Python Daemon"
+  language: "C++, Python, Shell"
+skills:
+  - "ebpf-kernel-telemetry"
+  - "ssh-session-surveillance"
+  - "anomaly-alert-triggering"
+  - "statsd-metrics-aggregation"
+tools:
+  - "ssh-session-tracker"
+  - "ebpf-syscall-probe"
+  - "incident-alert-dispatcher"
+  - "session-stream-recorder"
+  - "telemetry-metric-exporter"

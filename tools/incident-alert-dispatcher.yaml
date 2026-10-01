@@ -1,0 +1,23 @@
+name: "incident-alert-dispatcher"
+description: "Triggers real-time security alerts and webhook notifications across Slack, Syslog, and custom endpoints."
+input_schema:
+  type: object
+  properties:
+    severity:
+      type: string
+      description: "Incident severity level."
+      enum: ["info", "warning", "critical"]
+    message:
+      type: string
+      description: "Detailed description of the detected security event."
+    session_id:
+      type: string
+      description: "Associated SSH session ID where event occurred."
+    channel:
+      type: string
+      description: "Notification sink channel."
+      enum: ["slack", "syslog", "webhook", "all"]
+      default: "all"
+  required:
+    - severity
+    - message

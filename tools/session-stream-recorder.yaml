@@ -1,0 +1,19 @@
+name: "session-stream-recorder"
+description: "Records and inspects full terminal keystroke logs and command outputs for security auditing."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      description: "Recorder operation to execute."
+      enum: ["start_recording", "stop_recording", "export_log", "inspect_tail"]
+    session_id:
+      type: string
+      description: "Target SSH session identifier."
+    tail_lines:
+      type: integer
+      description: "Number of recent terminal lines to inspect."
+      default: 50
+  required:
+    - action
+    - session_id

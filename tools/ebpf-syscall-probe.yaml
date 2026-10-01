@@ -1,0 +1,18 @@
+name: "ebpf-syscall-probe"
+description: "Attaches and queries eBPF tracepoints for process execution, socket connections, and terminal I/O."
+input_schema:
+  type: object
+  properties:
+    probe_type:
+      type: string
+      description: "Kernel probe category."
+      enum: ["execve", "tty_write", "tcp_connect", "status"]
+    target_pid:
+      type: integer
+      description: "Optional PID filter for targeted probe tracing."
+    buffer_size_mb:
+      type: integer
+      description: "Ring buffer allocation in megabytes."
+      default: 16
+  required:
+    - probe_type

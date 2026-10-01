@@ -1,0 +1,17 @@
+name: "ssh-session-tracker"
+description: "Queries and lists active and historical SSH sessions, client IPs, connected TTYs, and active users."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      description: "Session tracking action to perform."
+      enum: ["list_active", "get_history", "inspect_session", "get_session_stats"]
+    session_id:
+      type: string
+      description: "Identifier of a specific SSH session to inspect."
+    filter_user:
+      type: string
+      description: "Filter sessions by username."
+  required:
+    - action
